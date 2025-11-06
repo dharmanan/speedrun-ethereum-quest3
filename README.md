@@ -1,71 +1,349 @@
-# 🏗 Scaffold-ETH 2
+# 🚩 SpeedRun Ethereum - Token Vendor Challenge 🏵
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+![Token Vendor Challenge](https://raw.githubusercontent.com/scaffold-eth/se-2-challenges/challenge-token-vendor/extension/packages/nextjs/public/hero.png)
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+A complete implementation of the SpeedRun Ethereum Token Vendor challenge, featuring a decentralized ERC20 token vending machine with buy/sell functionality, deployed on Sepolia testnet with a fully functional Next.js frontend.
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
+## 🎯 Challenge Overview
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+Create a decentralized vending machine that allows users to buy and sell ERC20 tokens using ETH. This challenge teaches:
+- ERC20 token implementation with OpenZeppelin
+- Contract-to-contract interactions
+- The "approve" pattern for token transfers
+- Payable functions and ETH handling
+- Smart contract security with Ownable pattern
+- Frontend integration with Web3 wallets
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
+## 📋 What We Built
 
-## Requirements
+### 🏗 Smart Contracts
 
-Before you begin, you need to install the following tools:
+#### YourToken.sol
+- **ERC20 Token**: Inherits OpenZeppelin's ERC20 standard
+- **Initial Supply**: Mints 1000 tokens (with 18 decimals) to deployer
+- **Standard Functions**: transfer, approve, transferFrom, balanceOf, etc.
 
-- [Node (>= v20.18.3)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
+#### Vendor.sol
+- **Token Vending Machine**: Buys and sells YourToken using ETH
+- **Exchange Rate**: 100 tokens per ETH
+- **Functions**:
+  - `buyTokens()`: Payable function to purchase tokens with ETH
+  - `sellTokens(uint256 amount)`: Sell tokens back for ETH (requires approval)
+  - `withdraw()`: Owner can withdraw accumulated ETH
+- **Events**: BuyTokens and SellTokens for transaction tracking
+- **Security**: Ownable pattern for access control
 
-# 🚩 Challenge: 🏵 Token Vendor 🤖
+### 🎨 Frontend (Next.js + TypeScript)
 
-![readme-2](https://raw.githubusercontent.com/scaffold-eth/se-2-challenges/challenge-token-vendor/extension/packages/nextjs/public/hero.png)
+- **Framework**: Next.js 15 with TypeScript
+- **Web3 Integration**: Wagmi + Viem for Ethereum interactions
+- **Wallet Connection**: RainbowKit for multiple wallet support
+- **UI Components**: Responsive design with Tailwind CSS
+- **Pages**:
+  - **Token Vendor**: Buy/sell interface with real-time balance display
+  - **Events**: Transaction history with BuyTokens/SellTokens events
+  - **Debug Contracts**: Direct contract interaction for testing
 
-🤖 Smart contracts are kind of like "always on" _vending machines_ that **anyone** can access. Let's make a decentralized, digital currency. Then, let's build an unstoppable vending machine that will buy and sell the currency. We'll learn about the "approve" pattern for ERC20s and how contract to contract interactions work.
+## 🚀 Deployment & Verification
 
-🏵 Create `YourToken.sol` smart contract that inherits the **ERC20** token standard from OpenZeppelin. Set your token to `_mint()` **1000** (* 10 ** 18) tokens to the `msg.sender`. Then create a `Vendor.sol` contract that sells your token using a payable `buyTokens()` function.
+### Testnet Deployment
+- **Network**: Sepolia Testnet
+- **Token Contract**: [0x1f06AB392aD2733F3c1Ece8cCC92fd2188F414CD](https://sepolia.etherscan.io/address/0x1f06AB392aD2733F3c1Ece8cCC92fd2188F414CD#code)
+- **Vendor Contract**: [0x56A19Af53EE3550b2C0D84c6076e5EA8A975CB83](https://sepolia.etherscan.io/address/0x56A19Af53EE3550b2C0D84c6076e5EA8A975CB83#code)
 
-🎛 Edit the frontend that invites the user to input an amount of tokens they want to buy. We'll display a preview of the amount of ETH it will cost with a confirm button.
+### Frontend Deployment
+- **Platform**: Vercel
+- **URL**: https://nextjs-oy876mvfo-kohens-projects.vercel.app
+- **Network**: Connected to Sepolia testnet
 
-🔍 It will be important to verify your token's source code in the block explorer after you deploy. Supporters will want to be sure that it has a fixed supply and you can't just mint more.
+## 🛠 Step-by-Step Implementation Guide
 
-🌟 The final deliverable is an app that lets users purchase your ERC20 token, transfer it, and sell it back to the vendor. Deploy your contracts on your public chain of choice and then `yarn vercel` your app to a public web server. Submit the url on [SpeedRunEthereum.com](https://speedrunethereum.com)!
+### 1. Environment Setup
 
-> 💬 Meet other builders working on this challenge and get help in the [Challenge Telegram](https://t.me/joinchat/IfARhZFc5bfPwpjq)!
+```bash
+# Clone the challenge repository
+git clone https://github.com/scaffold-eth/se-2-challenges.git
+cd se-2-challenges/challenge-token-vendor
 
----
+# Install dependencies
+npm install
+```
 
-## Checkpoint 0: 📦 Environment 📚
+### 2. Smart Contract Development
 
-> Start your local network (a blockchain emulator in your computer):
+#### YourToken.sol Implementation
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract YourToken is ERC20 {
+    constructor() ERC20("YourToken", "YTK") {
+        _mint(msg.sender, 1000 * 10**18); // Mint 1000 tokens
+    }
+}
+```
+
+#### Vendor.sol Implementation
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "./YourToken.sol";
+
+contract Vendor is Ownable {
+    uint256 public constant tokensPerEth = 100;
+
+    event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
+    event SellTokens(address seller, uint256 amountOfTokens, uint256 amountOfETH);
+
+    YourToken public yourToken;
+
+    constructor(address tokenAddress) Ownable(msg.sender) {
+        yourToken = YourToken(tokenAddress);
+    }
+
+    function buyTokens() public payable {
+        require(msg.value > 0, "Send ETH to buy tokens");
+
+        uint256 tokensToBuy = msg.value * tokensPerEth;
+        require(yourToken.balanceOf(address(this)) >= tokensToBuy, "Vendor has insufficient tokens");
+
+        bool sent = yourToken.transfer(msg.sender, tokensToBuy);
+        require(sent, "Failed to transfer tokens");
+
+        emit BuyTokens(msg.sender, msg.value, tokensToBuy);
+    }
+
+    function sellTokens(uint256 amount) public {
+        require(amount > 0, "Amount must be greater than 0");
+        require(yourToken.balanceOf(msg.sender) >= amount, "Insufficient token balance");
+
+        uint256 ethToSend = amount / tokensPerEth;
+        require(address(this).balance >= ethToSend, "Vendor has insufficient ETH");
+
+        bool success = yourToken.transferFrom(msg.sender, address(this), amount);
+        require(success, "Transfer failed");
+
+        (bool sent,) = msg.sender.call{value: ethToSend}("");
+        require(sent, "Failed to send ETH");
+
+        emit SellTokens(msg.sender, amount, ethToSend);
+    }
+
+    function withdraw() public onlyOwner {
+        (bool sent,) = msg.sender.call{value: address(this).balance}("");
+        require(sent, "Failed to send ETH");
+    }
+
+    receive() external payable {}
+}
+```
+
+### 3. Local Testing
+
+```bash
+# Start local Hardhat network
+npm run chain
+
+# Deploy contracts locally
+npm run deploy
+
+# Run tests
+npm run test
+
+# Start frontend
+npm run dev
+```
+
+### 4. Testnet Deployment
+
+```bash
+# Generate deployer account
+npm run account:generate
+
+# Fund the account with Sepolia ETH from a faucet
+# (e.g., https://sepoliafaucet.com or https://faucet.quicknode.com/ethereum/sepolia)
+
+# Deploy to Sepolia
+npx hardhat run scripts/deploy-sepolia.ts --network sepolia
+```
+
+### 5. Contract Verification
+
+```bash
+# Verify Vendor contract
+npx hardhat verify --network sepolia 0x56A19Af53EE3550b2C0D84c6076e5EA8A975CB83 "0x1f06AB392aD2733F3c1Ece8cCC92fd2188F414CD"
+
+# Verify Token contract
+npx hardhat verify --network sepolia 0x1f06AB392aD2733F3c1Ece8cCC92fd2188F414CD
+```
+
+### 6. Frontend Configuration
+
+Update `packages/nextjs/contracts/externalContracts.ts` with deployed contract addresses:
+
+```typescript
+const externalContracts = {
+  11155111: { // Sepolia chain ID
+    YourToken: {
+      address: "0x1f06AB392aD2733F3c1Ece8cCC92fd2188F414CD",
+      abi: [/* YourToken ABI */]
+    },
+    Vendor: {
+      address: "0x56A19Af53EE3550b2C0D84c6076e5EA8A975CB83",
+      abi: [/* Vendor ABI */]
+    }
+  }
+} as const;
+```
+
+Update `packages/nextjs/scaffold.config.ts`:
+```typescript
+const scaffoldConfig = {
+  targetNetworks: [chains.sepolia], // Change from chains.hardhat
+  // ... other config
+};
+```
+
+### 7. Frontend Deployment
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Login to Vercel
+vercel login
+
+# Deploy to production
+cd packages/nextjs
+vercel --prod
+```
+
+## 🧪 Testing
+
+Run the complete test suite:
+
+```bash
+cd packages/hardhat
+npm run test
+```
+
+**Test Results:**
+- ✅ Deploy YourToken contract
+- ✅ Deploy Vendor contract
+- ✅ Buy tokens functionality
+- ✅ Sell tokens functionality
+- ✅ Owner withdrawal functionality
+
+## 📊 Architecture
 
 ```
-yarn chain
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │  Vendor.sol     │    │  YourToken.sol  │
+│  (Next.js)      │◄──►│                 │◄──►│                 │
+│                 │    │ • buyTokens()   │    │ • ERC20 Token   │
+│ • Buy/Sell UI   │    │ • sellTokens()  │    │ • Transfer      │
+│ • Wallet Connect│    │ • withdraw()    │    │ • Approve       │
+│ • Event History │    │ • Events        │    │ • Balance       │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         └───────────────────────┼───────────────────────┘
+                                 ▼
+                        Sepolia Testnet
 ```
 
-> in a second terminal window, 🛰 deploy your contract (locally):
+## 🔐 Security Features
 
-```sh
-yarn deploy
-```
+- **Ownable Pattern**: Only contract owner can withdraw ETH
+- **Input Validation**: Require statements for all user inputs
+- **Reentrancy Protection**: Careful ETH transfers
+- **Access Control**: Owner-only functions
+- **Balance Checks**: Prevent insufficient balance errors
 
-> in a third terminal window, start your 📱 frontend:
+## 🎨 User Experience
 
-```sh
-yarn start
-```
+1. **Connect Wallet**: Users connect their Web3 wallet (MetaMask, etc.)
+2. **Buy Tokens**: Enter ETH amount, see token preview, confirm transaction
+3. **Sell Tokens**: Approve token spending, enter token amount, receive ETH
+4. **View Events**: See transaction history in real-time
+5. **Debug Tools**: Direct contract interaction for advanced users
 
-📱 Open http://localhost:3000 to see the app.
+## 📈 Key Features
 
-> 👩‍💻 Rerun `yarn deploy --reset` whenever you want to deploy new contracts to the frontend, update your current contracts with changes, or re-deploy it to get a fresh contract address.
+- **Real-time Balance Updates**: Automatic UI updates after transactions
+- **Gas Estimation**: Transaction cost previews
+- **Event Streaming**: Live transaction history
+- **Multi-wallet Support**: Works with all Web3 wallets
+- **Responsive Design**: Mobile-friendly interface
+- **Error Handling**: User-friendly error messages
+
+## 🏆 Challenge Completion
+
+This implementation successfully completes all SpeedRun Ethereum Token Vendor requirements:
+
+- ✅ ERC20 token with fixed supply
+- ✅ Payable buyTokens() function
+- ✅ Token selling with approval pattern
+- ✅ Owner withdrawal functionality
+- ✅ Frontend with buy/sell interface
+- ✅ Testnet deployment and verification
+- ✅ Public web deployment
+- ✅ Source code verification
+
+## 🔗 Links
+
+- **Live Demo**: https://nextjs-oy876mvfo-kohens-projects.vercel.app
+- **Vendor Contract**: https://sepolia.etherscan.io/address/0x56A19Af53EE3550b2C0D84c6076e5EA8A975CB83#code
+- **Token Contract**: https://sepolia.etherscan.io/address/0x1f06AB392aD2733F3c1Ece8cCC92fd2188F414CD#code
+- **GitHub**: https://github.com/dharmanan/speedrun-ethereum-quest3
+- **SpeedRun Ethereum**: https://speedrunethereum.com
+
+## � How to Use This Repository
+
+1. **Fork this repository**
+2. **Follow the step-by-step guide above**
+3. **Customize the contracts and frontend as needed**
+4. **Deploy to your preferred testnet**
+5. **Submit your solution to SpeedRun Ethereum**
+
+## 📚 Learnings
+
+This challenge teaches:
+- Smart contract development with Solidity
+- ERC20 token standards and interactions
+- DeFi concepts (token exchanges, approvals)
+- Frontend Web3 integration
+- Testnet deployment and verification
+- Decentralized application architecture
+
+## 🤝 Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## � License
+
+This project is part of the SpeedRun Ethereum challenges and follows their licensing terms.
+
+## 📚 Learnings
+
+This challenge teaches:
+- Smart contract development with Solidity
+- ERC20 token standards and interactions
+- DeFi concepts (token exchanges, approvals)
+- Frontend Web3 integration
+- Testnet deployment and verification
+- Decentralized application architecture
+
+## 🤝 Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## 📄 License
+
+This project is part of the SpeedRun Ethereum challenges and follows their licensing terms.
 
 ---
 
