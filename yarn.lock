@@ -226,19 +226,6 @@
     ethereum-cryptography "^2.0.0"
     micro-ftch "^0.3.1"
 
-"@ethersproject/abi@^5.0.0", "@ethersproject/abi@~5.7.0":
-  version "5.7.0"
-  dependencies:
-    "@ethersproject/address" "^5.7.0"
-    "@ethersproject/bignumber" "^5.7.0"
-    "@ethersproject/bytes" "^5.7.0"
-    "@ethersproject/constants" "^5.7.0"
-    "@ethersproject/hash" "^5.7.0"
-    "@ethersproject/keccak256" "^5.7.0"
-    "@ethersproject/logger" "^5.7.0"
-    "@ethersproject/properties" "^5.7.0"
-    "@ethersproject/strings" "^5.7.0"
-
 "@ethersproject/abi@^5.0.9":
   version "5.8.0"
   dependencies:
@@ -290,6 +277,19 @@
     "@ethersproject/logger" "^5.8.0"
     "@ethersproject/properties" "^5.8.0"
     "@ethersproject/strings" "^5.8.0"
+
+"@ethersproject/abi@~5.7.0":
+  version "5.7.0"
+  dependencies:
+    "@ethersproject/address" "^5.7.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/constants" "^5.7.0"
+    "@ethersproject/hash" "^5.7.0"
+    "@ethersproject/keccak256" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    "@ethersproject/strings" "^5.7.0"
 
 "@ethersproject/abstract-provider@^5.7.0", "@ethersproject/abstract-provider@^5.8.0", "@ethersproject/abstract-provider@5.8.0":
   version "5.8.0"
@@ -439,30 +439,6 @@
   dependencies:
     "@ethersproject/logger" "^5.8.0"
 
-"@ethersproject/providers@^5.0.0", "@ethersproject/providers@~5.7.2":
-  version "5.7.2"
-  dependencies:
-    "@ethersproject/abstract-provider" "^5.7.0"
-    "@ethersproject/abstract-signer" "^5.7.0"
-    "@ethersproject/address" "^5.7.0"
-    "@ethersproject/base64" "^5.7.0"
-    "@ethersproject/basex" "^5.7.0"
-    "@ethersproject/bignumber" "^5.7.0"
-    "@ethersproject/bytes" "^5.7.0"
-    "@ethersproject/constants" "^5.7.0"
-    "@ethersproject/hash" "^5.7.0"
-    "@ethersproject/logger" "^5.7.0"
-    "@ethersproject/networks" "^5.7.0"
-    "@ethersproject/properties" "^5.7.0"
-    "@ethersproject/random" "^5.7.0"
-    "@ethersproject/rlp" "^5.7.0"
-    "@ethersproject/sha2" "^5.7.0"
-    "@ethersproject/strings" "^5.7.0"
-    "@ethersproject/transactions" "^5.7.0"
-    "@ethersproject/web" "^5.7.0"
-    bech32 "1.1.4"
-    ws "7.4.6"
-
 "@ethersproject/providers@^5.7.2", "@ethersproject/providers@5.8.0":
   version "5.8.0"
   dependencies:
@@ -486,6 +462,30 @@
     "@ethersproject/web" "^5.8.0"
     bech32 "1.1.4"
     ws "8.18.0"
+
+"@ethersproject/providers@~5.7.2":
+  version "5.7.2"
+  dependencies:
+    "@ethersproject/abstract-provider" "^5.7.0"
+    "@ethersproject/abstract-signer" "^5.7.0"
+    "@ethersproject/address" "^5.7.0"
+    "@ethersproject/base64" "^5.7.0"
+    "@ethersproject/basex" "^5.7.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/constants" "^5.7.0"
+    "@ethersproject/hash" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/networks" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    "@ethersproject/random" "^5.7.0"
+    "@ethersproject/rlp" "^5.7.0"
+    "@ethersproject/sha2" "^5.7.0"
+    "@ethersproject/strings" "^5.7.0"
+    "@ethersproject/transactions" "^5.7.0"
+    "@ethersproject/web" "^5.7.0"
+    bech32 "1.1.4"
+    ws "7.4.6"
 
 "@ethersproject/random@^5.7.0", "@ethersproject/random@^5.8.0", "@ethersproject/random@5.8.0":
   version "5.8.0"
@@ -1128,7 +1128,7 @@
 "@next/swc-linux-x64-gnu@15.2.5":
   version "15.2.5"
 
-"@noble/ciphers@^1.0.0", "@noble/ciphers@^1.3.0":
+"@noble/ciphers@^1.3.0":
   version "1.3.0"
 
 "@noble/ciphers@1.2.1":
@@ -1284,7 +1284,7 @@
     deep-eql "^4.0.1"
     ordinal "^1.0.3"
 
-"@nomicfoundation/hardhat-ethers@^3.0.2", "@nomicfoundation/hardhat-ethers@^3.0.9", "@nomicfoundation/hardhat-ethers@~3.0.8":
+"@nomicfoundation/hardhat-ethers@~3.0.8":
   version "3.0.9"
   dependencies:
     debug "^4.1.1"
@@ -1957,10 +1957,10 @@
     postcss "^8.4.41"
     tailwindcss "4.0.15"
 
-"@tanstack/query-core@>=5.0.0", "@tanstack/query-core@5.59.20":
+"@tanstack/query-core@5.59.20":
   version "5.59.20"
 
-"@tanstack/react-query@>=5.0.0", "@tanstack/react-query@~5.59.15":
+"@tanstack/react-query@~5.59.15":
   version "5.59.20"
   dependencies:
     "@tanstack/query-core" "5.59.20"
@@ -2013,7 +2013,7 @@
     lodash "^4.17.15"
     ts-essentials "^7.0.1"
 
-"@typechain/ethers-v6@^0.5.1", "@typechain/ethers-v6@~0.5.1":
+"@typechain/ethers-v6@~0.5.1":
   version "0.5.1"
   dependencies:
     lodash "^4.17.15"
@@ -2053,7 +2053,7 @@
 "@types/deep-eql@*":
   version "4.0.2"
 
-"@types/eslint@>=8.0.0", "@types/eslint@~9.6.1":
+"@types/eslint@~9.6.1":
   version "9.6.1"
   dependencies:
     "@types/estree" "*"
@@ -2094,10 +2094,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@>=18", "@types/node@~18.19.50":
-  version "18.19.130"
+"@types/node@*":
+  version "24.10.0"
   dependencies:
-    undici-types "~5.26.4"
+    undici-types "~7.16.0"
 
 "@types/node@^20.10.7":
   version "20.19.24"
@@ -2108,6 +2108,11 @@
   version "24.10.0"
   dependencies:
     undici-types "~7.16.0"
+
+"@types/node@~18.19.50":
+  version "18.19.130"
+  dependencies:
+    undici-types "~5.26.4"
 
 "@types/node@16.18.11":
   version "16.18.11"
@@ -2135,7 +2140,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/react@*", "@types/react@>=16.8", "@types/react@>=18.0.0", "@types/react@~19.0.7":
+"@types/react@~19.0.7":
   version "19.0.14"
   dependencies:
     csstype "^3.0.2"
@@ -2177,7 +2182,7 @@
     natural-compare "^1.4.0"
     ts-api-utils "^2.0.1"
 
-"@typescript-eslint/parser@^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0", "@typescript-eslint/parser@^8.46.3":
+"@typescript-eslint/parser@^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0":
   version "8.46.3"
   dependencies:
     "@typescript-eslint/scope-manager" "8.46.3"
@@ -2186,7 +2191,7 @@
     "@typescript-eslint/visitor-keys" "8.46.3"
     debug "^4.3.4"
 
-"@typescript-eslint/parser@^8.0.0 || ^8.0.0-alpha.0", "@typescript-eslint/parser@~8.27.0":
+"@typescript-eslint/parser@~8.27.0":
   version "8.27.0"
   dependencies:
     "@typescript-eslint/scope-manager" "8.27.0"
@@ -2332,7 +2337,7 @@
 "@unrs/resolver-binding-linux-x64-gnu@1.11.1":
   version "1.11.1"
 
-"@vanilla-extract/css@^1.0.0", "@vanilla-extract/css@1.17.3":
+"@vanilla-extract/css@1.17.3":
   version "1.17.3"
   dependencies:
     "@emotion/hash" "^0.9.0"
@@ -2851,7 +2856,7 @@ acorn-walk@^8.1.1:
   dependencies:
     acorn "^8.11.0"
 
-"acorn@^6.0.0 || ^7.0.0 || ^8.0.0", acorn@^8, acorn@^8.11.0, acorn@^8.15.0, acorn@^8.4.1, acorn@^8.6.0:
+acorn@^8.11.0, acorn@^8.15.0, acorn@^8.4.1, acorn@^8.6.0:
   version "8.15.0"
 
 actor@^2.3.1:
@@ -3296,7 +3301,7 @@ browserify-aes@^1.2.0:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-browserslist@^4.24.4, "browserslist@>= 4.21.0":
+browserslist@^4.24.4:
   version "4.27.0"
   dependencies:
     baseline-browser-mapping "^2.8.19"
@@ -3337,7 +3342,7 @@ buffer@^6.0.3, buffer@6.0.3:
     base64-js "^1.3.1"
     ieee754 "^1.2.1"
 
-bufferutil@^4.0.1, bufferutil@^4.0.8:
+bufferutil@^4.0.8:
   version "4.0.9"
   dependencies:
     node-gyp-build "^4.3.0"
@@ -3451,7 +3456,7 @@ chai-as-promised@^7.1.1:
   dependencies:
     check-error "^1.0.2"
 
-chai@^4.2.0, "chai@>= 2.1.2 < 6", chai@~4.5.0:
+chai@~4.5.0:
   version "4.5.0"
   dependencies:
     assertion-error "^1.1.0"
@@ -3773,7 +3778,7 @@ css-what@^6.1.0:
 cssesc@^3.0.0:
   version "3.0.0"
 
-csstype@^3.0.10, csstype@^3.0.2, csstype@^3.0.7:
+csstype@^3.0.2, csstype@^3.0.7:
   version "3.1.3"
 
 cuer@0.0.2:
@@ -3987,7 +3992,7 @@ duplexify@^4.1.2:
 eastasianwidth@^0.2.0:
   version "0.2.0"
 
-eciesjs@*, eciesjs@^0.4.11:
+eciesjs@^0.4.11:
   version "0.4.16"
   dependencies:
     "@ecies/ciphers" "^0.2.4"
@@ -4041,7 +4046,7 @@ emoji-regex@^9.2.2:
 encode-utf8@^1.0.2, encode-utf8@^1.0.3:
   version "1.0.3"
 
-encoding@^0.1.0, encoding@^0.1.13:
+encoding@^0.1.13:
   version "0.1.13"
   dependencies:
     iconv-lite "^0.6.2"
@@ -4074,7 +4079,7 @@ enhanced-resolve@^5.18.1:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
 
-enquirer@^2.3.0, enquirer@^2.3.6, "enquirer@>= 2.3.0 < 3":
+enquirer@^2.3.0, enquirer@^2.3.6:
   version "2.4.1"
   dependencies:
     ansi-colors "^4.1.1"
@@ -4267,7 +4272,7 @@ eslint-config-next@~15.2.3:
     eslint-plugin-react "^7.37.0"
     eslint-plugin-react-hooks "^5.0.0"
 
-"eslint-config-prettier@>= 7.0.0 <10.0.0 || >=10.1.0", eslint-config-prettier@~10.1.1:
+eslint-config-prettier@~10.1.1:
   version "10.1.8"
 
 eslint-import-resolver-node@^0.3.6, eslint-import-resolver-node@^0.3.9:
@@ -4293,7 +4298,7 @@ eslint-module-utils@^2.12.1:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-import@*, eslint-plugin-import@^2.31.0:
+eslint-plugin-import@^2.31.0:
   version "2.32.0"
   dependencies:
     "@rtsao/scc" "^1.1.0"
@@ -4378,7 +4383,7 @@ eslint-visitor-keys@^3.4.3:
 eslint-visitor-keys@^4.2.0, eslint-visitor-keys@^4.2.1:
   version "4.2.1"
 
-eslint@*, "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8 || ^9", "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9", "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0", "eslint@^6.0.0 || ^7.0.0 || >=8.0.0", "eslint@^7.23.0 || ^8.0.0 || ^9.0.0", "eslint@^8.57.0 || ^9.0.0", eslint@>=7.0.0, eslint@>=8.0.0, eslint@~9.23.0:
+eslint@~9.23.0:
   version "9.23.0"
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
@@ -4566,17 +4571,6 @@ ethereumjs-util@^7.1.4:
     ethereum-cryptography "^0.1.3"
     rlp "^2.2.4"
 
-ethers@^5.1.3, ethers@^6.1.0, ethers@^6.14.0, ethers@~6.13.2, ethers@6.x:
-  version "6.13.7"
-  dependencies:
-    "@adraffy/ens-normalize" "1.10.1"
-    "@noble/curves" "1.2.0"
-    "@noble/hashes" "1.3.2"
-    "@types/node" "22.7.5"
-    aes-js "4.0.0-beta.5"
-    tslib "2.7.0"
-    ws "8.17.1"
-
 ethers@^5.7.0, ethers@~5.7.0:
   version "5.8.0"
   dependencies:
@@ -4610,6 +4604,17 @@ ethers@^5.7.0, ethers@~5.7.0:
     "@ethersproject/wallet" "5.8.0"
     "@ethersproject/web" "5.8.0"
     "@ethersproject/wordlists" "5.8.0"
+
+ethers@~6.13.2:
+  version "6.13.7"
+  dependencies:
+    "@adraffy/ens-normalize" "1.10.1"
+    "@noble/curves" "1.2.0"
+    "@noble/hashes" "1.3.2"
+    "@types/node" "22.7.5"
+    aes-js "4.0.0-beta.5"
+    tslib "2.7.0"
+    ws "8.17.1"
 
 ethjs-unit@0.1.6:
   version "0.1.6"
@@ -5192,7 +5197,7 @@ handlebars@^4.0.1:
 hardhat-deploy-ethers@~0.4.2:
   version "0.4.2"
 
-hardhat-deploy@^0.12.0, hardhat-deploy@^1.0.4:
+hardhat-deploy@^1.0.4:
   version "1.0.4"
   dependencies:
     "@ethersproject/abi" "^5.7.0"
@@ -5238,7 +5243,7 @@ hardhat-gas-reporter@~2.2.1:
     sha1 "^1.1.1"
     viem "^2.27.0"
 
-hardhat@^2.0.0, hardhat@^2.11.0, hardhat@^2.16.0, hardhat@^2.24.1, hardhat@^2.9.4, hardhat@^2.9.5, hardhat@^2.9.9, hardhat@~2.22.10:
+hardhat@~2.22.10:
   version "2.22.19"
   dependencies:
     "@ethersproject/abi" "^5.1.2"
@@ -5905,7 +5910,7 @@ jake@^10.8.5:
 javascript-natural-sort@0.7.1:
   version "0.7.1"
 
-jiti@*, jiti@^2.4.2:
+jiti@^2.4.2:
   version "2.6.1"
 
 js-sha3@^0.8.0, js-sha3@0.8.0:
@@ -7320,7 +7325,7 @@ picomatch@^2.2.2:
 picomatch@^2.3.1:
   version "2.3.1"
 
-"picomatch@^3 || ^4", picomatch@^4.0.3:
+picomatch@^4.0.3:
   version "4.0.3"
 
 pidtree@^0.6.0:
@@ -7377,17 +7382,17 @@ postcss-selector-parser@^7.0.0:
 postcss-value-parser@^4.2.0:
   version "4.2.0"
 
-postcss@^8.1.0, postcss@~8.4.45:
-  version "8.4.49"
-  dependencies:
-    nanoid "^3.3.7"
-    picocolors "^1.1.1"
-    source-map-js "^1.2.1"
-
 postcss@^8.4.41:
   version "8.5.6"
   dependencies:
     nanoid "^3.3.11"
+    picocolors "^1.1.1"
+    source-map-js "^1.2.1"
+
+postcss@~8.4.45:
+  version "8.4.49"
+  dependencies:
+    nanoid "^3.3.7"
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
@@ -7418,13 +7423,13 @@ prettier-plugin-solidity@~1.4.1:
     "@solidity-parser/parser" "^0.20.1"
     semver "^7.7.1"
 
-prettier@*, prettier@^3.5.3, prettier@>=2.3.0, prettier@>=3.0.0:
+prettier@*, prettier@^3.5.3:
   version "3.6.2"
 
 prettier@^2.3.1:
   version "2.8.8"
 
-prettier@~3.5.3, "prettier@2.x - 3.x":
+prettier@~3.5.3:
   version "3.5.3"
 
 pretty-ms@7.0.1:
@@ -7589,7 +7594,7 @@ raw-body@2.4.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-"react-dom@^16.8 || ^17 || ^18", "react-dom@^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0", react-dom@>=16, react-dom@>=18, react-dom@~19.0.0:
+react-dom@~19.0.0:
   version "19.0.0"
   dependencies:
     scheduler "^0.25.0"
@@ -7628,7 +7633,7 @@ react-style-singleton@^2.2.1, react-style-singleton@^2.2.2:
     get-nonce "^1.0.0"
     tslib "^2.0.0"
 
-"react@^16.8 || ^17 || ^18", "react@^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc", "react@^18 || ^19", "react@^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0", react@^19.0.0, "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0", react@>=16, react@>=16.8, react@>=18, react@>=18.0.0, react@~19.0.0:
+react@~19.0.0:
   version "19.0.0"
 
 read-cmd-shim@^5.0.0:
@@ -8605,7 +8610,7 @@ ts-morph@12.0.0:
     "@ts-morph/common" "~0.11.0"
     code-block-writer "^10.1.1"
 
-ts-node@*, ts-node@~10.9.1:
+ts-node@~10.9.1:
   version "10.9.2"
   dependencies:
     "@cspotcode/source-map-support" "^0.8.0"
@@ -8715,7 +8720,7 @@ type-fest@^4.26.1:
 type-fest@~4.26.1:
   version "4.26.1"
 
-typechain@^8.3.2, typechain@~8.3.2:
+typechain@~8.3.2:
   version "8.3.2"
   dependencies:
     "@types/prettier" "^2.1.1"
@@ -8766,10 +8771,10 @@ typed-array-length@^1.0.7:
     possible-typed-array-names "^1.0.0"
     reflect.getprototypeof "^1.0.6"
 
-typescript@*, typescript@^5.8.2, typescript@>=2.7, typescript@>=3.7.0, typescript@>=4.3.0, typescript@>=4.7.0, "typescript@>=4.8.4 <5.9.0":
+typescript@^5.8.2:
   version "5.9.3"
 
-typescript@>=3.3.1, typescript@>=4.8.4, "typescript@>=4.8.4 <6.0.0", typescript@>=5.0.4, typescript@>=5.4.0, typescript@~5.8.2:
+typescript@~5.8.2:
   version "5.8.3"
 
 typescript@4.9.5:
@@ -8842,7 +8847,7 @@ undici-types@~6.21.0:
 undici-types@~7.16.0:
   version "7.16.0"
 
-undici@*, undici@^5.14.0:
+undici@^5.14.0:
   version "5.29.0"
   dependencies:
     "@fastify/busboy" "^2.0.0"
@@ -8930,7 +8935,7 @@ use-sidecar@^1.1.2:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
 
-use-sync-external-store@>=1.2.0, use-sync-external-store@1.2.0:
+use-sync-external-store@1.2.0:
   version "1.2.0"
 
 use-sync-external-store@1.4.0:
@@ -8941,7 +8946,7 @@ usehooks-ts@~3.1.0:
   dependencies:
     lodash.debounce "^4.0.8"
 
-utf-8-validate@^5.0.2, utf-8-validate@>=5.0.2:
+utf-8-validate@^5.0.2:
   version "5.0.10"
   dependencies:
     node-gyp-build "^4.3.0"
@@ -8985,7 +8990,7 @@ validate-npm-package-name@^5.0.0, validate-npm-package-name@^5.0.1:
 validate-npm-package-name@^6.0.0, validate-npm-package-name@^6.0.1:
   version "6.0.2"
 
-valtio@*, valtio@1.13.2:
+valtio@1.13.2:
   version "1.13.2"
   dependencies:
     derive-valtio "0.1.0"
@@ -9059,7 +9064,7 @@ viem@2.23.2:
     ox "0.6.7"
     ws "8.18.0"
 
-viem@2.31.1, viem@2.x:
+viem@2.31.1:
   version "2.31.1"
   dependencies:
     "@noble/curves" "1.9.1"
@@ -9071,7 +9076,7 @@ viem@2.31.1, viem@2.x:
     ox "0.7.1"
     ws "8.18.2"
 
-wagmi@^2.9.0, wagmi@2.15.6:
+wagmi@2.15.6:
   version "2.15.6"
   dependencies:
     "@wagmi/connectors" "5.8.5"
@@ -9257,9 +9262,6 @@ write-file-atomic@^6.0.0:
     imurmurhash "^0.1.4"
     signal-exit "^4.0.1"
 
-ws@*, ws@8.18.0:
-  version "8.18.0"
-
 ws@^7.4.6:
   version "7.5.10"
 
@@ -9274,6 +9276,9 @@ ws@7.4.6:
 
 ws@8.17.1:
   version "8.17.1"
+
+ws@8.18.0:
+  version "8.18.0"
 
 ws@8.18.2:
   version "8.18.2"
@@ -9395,7 +9400,7 @@ zksync-ethers@^5.0.0:
   dependencies:
     ethers "~5.7.0"
 
-"zod@^3 >=3.22.0", "zod@^3.22.0 || ^4.0.0", zod@^3.22.4:
+zod@^3.22.4:
   version "3.25.76"
 
 zod@3.22.4:
