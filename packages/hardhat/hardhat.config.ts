@@ -7,8 +7,8 @@ import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
 import "@nomicfoundation/hardhat-verify";
-import "hardhat-deploy";
-import "hardhat-deploy-ethers";
+// import "hardhat-deploy";
+// import "hardhat-deploy-ethers";
 import { task } from "hardhat/config";
 import generateTsAbis from "./scripts/generateTsAbis";
 
@@ -38,12 +38,12 @@ const config: HardhatUserConfig = {
     ],
   },
   defaultNetwork: "localhost",
-  namedAccounts: {
-    deployer: {
-      // By default, it will take the first Hardhat account as the deployer
-      default: 0,
-    },
-  },
+  // namedAccounts: {
+  //   deployer: {
+  //     // By default, it will take the first Hardhat account as the deployer
+  //     default: 0,
+  //   },
+  // },
   networks: {
     // View the networks that are pre-configured.
     // If the network you are looking for is not here you can add new network settings
@@ -131,22 +131,22 @@ const config: HardhatUserConfig = {
     apiKey: etherscanApiKey,
   },
   // Configuration for etherscan-verify from hardhat-deploy plugin
-  verify: {
-    etherscan: {
-      apiKey: etherscanApiKey,
-    },
-  },
+  // verify: {
+  //   etherscan: {
+  //     apiKey: etherscanApiKey,
+  //   },
+  // },
   sourcify: {
     enabled: false,
   },
 };
 
 // Extend the deploy task
-task("deploy").setAction(async (args, hre, runSuper) => {
-  // Run the original deploy task
-  await runSuper(args);
-  // Force run the generateTsAbis script
-  await generateTsAbis(hre);
-});
+// task("deploy").setAction(async (args, hre, runSuper) => {
+//   // Run the original deploy task
+//   await runSuper(args);
+//   // Force run the generateTsAbis script
+//   await generateTsAbis(hre);
+// });
 
 export default config;

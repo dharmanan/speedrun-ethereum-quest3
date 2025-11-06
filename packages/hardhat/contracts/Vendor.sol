@@ -66,3 +66,4 @@ contract Vendor is Ownable {
 
     // Receive ETH directly
     receive() external payable {}
+}
