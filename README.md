@@ -319,3 +319,5 @@ This challenge taught me:
 
 ## 📄 License
 
+This project is part of the SpeedRun Ethereum challenges and follows their licensing terms.
+
