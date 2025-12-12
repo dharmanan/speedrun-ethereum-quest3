@@ -1636,9 +1636,9 @@
     "@emnapi/runtime" "^1.4.3"
     "@tybys/wasm-util" "^0.10.0"
 
-"@next/env@15.4.9":
-  version "15.4.9"
-  resolved "https://registry.yarnpkg.com/@next/env/-/env-15.4.9.tgz#5caeeaf5f20cf2bf5176444f13d087963159031f"
+"@next/env@15.4.10":
+  version "15.4.10"
+  resolved "https://registry.yarnpkg.com/@next/env/-/env-15.4.10.tgz#a794b738d043d9e98ea435bd45254899f7f77714"
 
 "@next/eslint-plugin-next@15.2.5":
   version "15.2.5"
@@ -8317,11 +8317,11 @@ next-themes@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.3.0.tgz#b4d2a866137a67d42564b07f3a3e720e2ff3871a"
 
-next@~15.4.9:
-  version "15.4.9"
-  resolved "https://registry.yarnpkg.com/next/-/next-15.4.9.tgz#9204500a9c3cb2b981fb932077abfa66d3ef663f"
+next@~15.4.10:
+  version "15.4.10"
+  resolved "https://registry.yarnpkg.com/next/-/next-15.4.10.tgz#4ee237d4eb16289f6e16167fbed59d8ada86aa59"
   dependencies:
-    "@next/env" "15.4.9"
+    "@next/env" "15.4.10"
     "@swc/helpers" "0.5.15"
     caniuse-lite "^1.0.30001579"
     postcss "8.4.31"
